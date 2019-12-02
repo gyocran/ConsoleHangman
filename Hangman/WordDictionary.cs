@@ -22,15 +22,17 @@ namespace Hangman
     public class WordDictionary
     {
         // Words sourced from dictionary.com
-        private ArrayList Words = new ArrayList
+        private static ArrayList Words = new ArrayList
         {
             new Word("corybantic", "frenzied; agitated; unrestrained."),
             new Word("foison", "abundance; plenty.")
         };
 
-        //private static Word SelectRandomWord()
-        //{
-            
-        //}
+        public static Word SelectRandomWord()
+        {
+            Random rnd = new Random();
+            int index = rnd.Next(0, Words.Count - 1);
+            return (Word)Words[index];
+        }
     }
 }
