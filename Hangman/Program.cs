@@ -12,13 +12,19 @@ namespace Hangman
         {
             var word = WordDictionary.SelectRandomWord();
             var arr = word.Name.ToCharArray();
-            for (int i = 0; i < arr.Length; i++)
+            var entry = Console.ReadLine();
+            foreach(char letter in arr)
             {
-                var ch = arr[i];
-                if (ch == 'o')
-                    arr[i] = '_';
-                Console.Write(arr[i] + " ");
+                var response = Convert.ToChar(entry) == letter ? letter.ToString() : "_";
+                Console.Write(response + " ");
             }
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    var ch = arr[i];
+            //    if (ch == 'o')
+            //        arr[i] = '_';
+            //    Console.Write(arr[i] + " ");
+            //}
             //Console.Write(arr.ToString());
             Console.ReadLine();
         }

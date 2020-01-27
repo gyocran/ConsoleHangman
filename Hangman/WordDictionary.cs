@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hangman
 {
-    public struct Word
+    public class Word
     {
         public string Name { get; }
         public string Meaning { get; set; }
@@ -28,6 +28,7 @@ namespace Hangman
             new Word("foison", "abundance; plenty.")
         };
 
+        // Select random word from word repository
         public static Word SelectRandomWord()
         {
             Random rnd = new Random();
